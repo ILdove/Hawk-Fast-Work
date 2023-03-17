@@ -1,0 +1,8 @@
+server:
+  port: 9812
+
+spring:
+  application:
+    name: Hawk-User
+  profiles:
+    active: dev

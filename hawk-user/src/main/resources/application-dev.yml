@@ -1,0 +1,16 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: admin123456
+      roles: admin
+  datasource:
+    url: jdbc:mysql://100.25.34.28:3306/K2_ONCOLOGY?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: Magiccc9#812
+  redis:
+    host: 192.168.113.21 # Redis服务器地址
+    database: 0 # Redis数据库索引（默认为0）
+    port: 26379 # Redis服务器连接端口
+    password: 4$4^o7YM_Z5*Qo # Redis服务器连接密码（默认为空）
+    timeout: 3000ms # 连接超时时间（毫秒）
