@@ -1,6 +1,5 @@
-package com.hawk.common.utils;
+package com.hawk.common.utils.email;
 
-import com.hawk.common.vo.MailVo;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
