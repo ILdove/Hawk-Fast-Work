@@ -1,9 +1,7 @@
 package com.hawk.common.base;
 
 
-import io.swagger.annotations.ApiModelProperty;
-
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * 实体类基类
@@ -13,23 +11,43 @@ import java.time.LocalDateTime;
  */
 public class BaseClass {
 
-    private LocalDateTime createTime;
+    private Date createTime;
 
-    private LocalDateTime updateTime;
+    private Date updateTime;
 
-    public LocalDateTime getCreateTime() {
+    private String order;
+
+    private String sort;
+
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDateTime createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public LocalDateTime getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(LocalDateTime updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 }
