@@ -1,6 +1,6 @@
 package com.hawk.common.exception;
 
-import com.hawk.common.base.BaseResult;
+import com.hawk.common.api.CommonResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
 
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
-    public BaseResult handle(Exception e) {
-        return BaseResult.failed(e.getMessage());
+    public CommonResult handle(Exception e) {
+        return CommonResult.failed(e.getMessage());
     }
 }
