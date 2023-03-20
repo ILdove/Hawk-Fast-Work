@@ -28,4 +28,8 @@ public class BaseResult<T> {
     public static <T> BaseResult<T> success(T data, String message) {
         return new BaseResult<T>(ResultEnum.SUCCESS.getCode(), message, data);
     }
+
+    public static <T> BaseResult<T> failed(String message) {
+        return new BaseResult<T>(ResultEnum.FAILED.getCode(), message, null);
+    }
 }
