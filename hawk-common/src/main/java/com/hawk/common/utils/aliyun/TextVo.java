@@ -1,6 +1,6 @@
-package com.hawk.common.utils.aliyun.vo;
+package com.hawk.common.utils.aliyun;
 
-public class SendCodeVo {
+public class TextVo {
 
     private String accessKeyId;
     private String accessKeySecret;

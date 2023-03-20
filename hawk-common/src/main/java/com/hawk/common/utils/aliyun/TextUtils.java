@@ -6,7 +6,6 @@ import com.aliyun.sdk.service.dysmsapi20170525.AsyncClient;
 import com.aliyun.sdk.service.dysmsapi20170525.models.SendSmsRequest;
 import com.aliyun.sdk.service.dysmsapi20170525.models.SendSmsResponse;
 import com.aliyun.sdk.service.dysmsapi20170525.models.SendSmsResponseBody;
-import com.hawk.common.utils.aliyun.vo.SendCodeVo;
 import darabonba.core.client.ClientOverrideConfiguration;
 
 import java.util.concurrent.CompletableFuture;
@@ -26,7 +25,7 @@ public class TextUtils {
      *
      * @param sendCodeVo 短信发送vo
      */
-    public static String sendMessage(SendCodeVo sendCodeVo) {
+    public static String sendMessage(TextVo sendCodeVo) {
 
         //身份认证
         StaticCredentialProvider provider = StaticCredentialProvider.create(Credential.builder()
