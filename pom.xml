@@ -31,6 +31,7 @@
         <commons-codec.version>1.15</commons-codec.version>
         <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
+        <aliyun.message.version>1.0.1</aliyun.message.version>
         <springboot.version>2.3.12.RELEASE</springboot.version>
     </properties>
 
@@ -106,6 +107,14 @@
                 <version>${lombok.version}</version>
             </dependency>
 
+            <!--阿里云短信验证码-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>alibabacloud-dysmsapi20170525</artifactId>
+                <version>${aliyun.message.version}</version>
+            </dependency>
+
+            <!--knife4j-->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-spring-boot-starter</artifactId>

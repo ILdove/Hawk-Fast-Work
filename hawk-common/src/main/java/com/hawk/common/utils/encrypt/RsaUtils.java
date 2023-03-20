@@ -1,4 +1,4 @@
-package com.hawk.common.utils;
+package com.hawk.common.utils.encrypt;
 
 import com.hawk.common.entity.Rsakeypair;
 import org.apache.commons.codec.binary.Base64;
@@ -11,12 +11,10 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 
 /**
- * @author : sean
- * @version V1.0
- * @Project: jsencrypt
- * @Package utils
- * @date Date : 2021年09月23日 21:36
+ *
+ * @author 杨晨
  * @Description: RSA加解密工具类，实现公钥加密私钥解密和私钥解密公钥解密
+ * @date 2023-03-20
  */
 public class RsaUtils {
 
