@@ -1,4 +1,4 @@
-package com.hawk.common.entity;
+package com.hawk.common.utils.encrypt;
 
 /**
  * RSA密钥对对象

@@ -1,6 +1,5 @@
 package com.hawk.common.utils.encrypt;
 
-import com.hawk.common.entity.Rsakeypair;
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
