@@ -44,6 +44,13 @@
                 <version>${springboot.version}</version>
             </dependency>
 
+            <!--AOP-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
+
             <!-- spring-boot-starter-security -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
