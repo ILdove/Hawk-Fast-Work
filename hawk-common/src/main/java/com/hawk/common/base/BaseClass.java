@@ -13,10 +13,8 @@ import java.time.LocalDateTime;
  */
 public class BaseClass {
 
-    @ApiModelProperty(value = "创建时间")
     private LocalDateTime createTime;
 
-    @ApiModelProperty(value = "修改时间")
     private LocalDateTime updateTime;
 
     public LocalDateTime getCreateTime() {

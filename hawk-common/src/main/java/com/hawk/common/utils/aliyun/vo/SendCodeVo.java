@@ -1,6 +1,7 @@
 package com.hawk.common.utils.aliyun.vo;
 
 public class SendCodeVo {
+
     private String accessKeyId;
     private String accessKeySecret;
     private String region;

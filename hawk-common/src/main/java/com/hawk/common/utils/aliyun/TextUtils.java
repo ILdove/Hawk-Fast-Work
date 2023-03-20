@@ -5,12 +5,11 @@ import com.aliyun.auth.credentials.provider.StaticCredentialProvider;
 import com.aliyun.sdk.service.dysmsapi20170525.AsyncClient;
 import com.aliyun.sdk.service.dysmsapi20170525.models.SendSmsRequest;
 import com.aliyun.sdk.service.dysmsapi20170525.models.SendSmsResponse;
-import com.google.gson.Gson;
+import com.aliyun.sdk.service.dysmsapi20170525.models.SendSmsResponseBody;
 import com.hawk.common.utils.aliyun.vo.SendCodeVo;
 import darabonba.core.client.ClientOverrideConfiguration;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 /**
  * 阿里云发送短信工具类
@@ -20,27 +19,31 @@ import java.util.concurrent.ExecutionException;
  */
 public class TextUtils {
 
+    public static final String TEST_CODE_JSON = "{\"code\":\"%s\"}";
+
     /**
      * 发送短信
      *
      * @param sendCodeVo 短信发送vo
      */
-    public static void sendMessage(SendCodeVo sendCodeVo) {
+    public static String sendMessage(SendCodeVo sendCodeVo) {
 
+        //身份认证
         StaticCredentialProvider provider = StaticCredentialProvider.create(Credential.builder()
                 .accessKeyId(sendCodeVo.getAccessKeyId())
                 .accessKeySecret(sendCodeVo.getAccessKeySecret())
                 .build());
 
+        //构建发送请求
+        ClientOverrideConfiguration clientOverrideConfiguration = ClientOverrideConfiguration.create()
+                .setEndpointOverride(sendCodeVo.getEndpointOverride());
         AsyncClient client = AsyncClient.builder()
                 .region(sendCodeVo.getRegion())
                 .credentialsProvider(provider)
-                .overrideConfiguration(
-                        ClientOverrideConfiguration.create()
-                                .setEndpointOverride(sendCodeVo.getEndpointOverride())
-                )
+                .overrideConfiguration(clientOverrideConfiguration)
                 .build();
 
+        //构建短信模板
         SendSmsRequest sendSmsRequest = SendSmsRequest.builder()
                 .signName(sendCodeVo.getSignName())
                 .templateCode(sendCodeVo.getTemplateCode())
@@ -48,17 +51,18 @@ public class TextUtils {
                 .templateParam(sendCodeVo.getCode())
                 .build();
 
+        //发送请求
         CompletableFuture<SendSmsResponse> response = client.sendSms(sendSmsRequest);
-        SendSmsResponse resp = null;
+
         try {
-            resp = response.get();
-        } catch (InterruptedException e) {
+            SendSmsResponse resp = response.get();
+            SendSmsResponseBody body = resp.getBody();
+            return body.getCode();
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e.getMessage());
         } finally {
             client.close();
         }
-        System.out.println(new Gson().toJson(resp));
     }
 }
