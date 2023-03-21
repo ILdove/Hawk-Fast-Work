@@ -11,7 +11,11 @@ import java.util.Date;
  */
 public class CommonEntity {
 
+    private Long createBy;
+
     private Date createTime;
+
+    private Long updateBy;
 
     private Date updateTime;
 
@@ -19,12 +23,28 @@ public class CommonEntity {
 
     private String sort;
 
+    public Long getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public Long getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(Long updateBy) {
+        this.updateBy = updateBy;
     }
 
     public Date getUpdateTime() {
