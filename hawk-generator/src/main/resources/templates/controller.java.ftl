@@ -44,7 +44,6 @@ public class ${table.controllerName} extends ${superControllerClass} {
     <#if swagger2>
 @Api(tags = "${table.comment!}接口")
     </#if>
-@CrossOrigin
 public class ${table.controllerName}{
 
     @Autowired

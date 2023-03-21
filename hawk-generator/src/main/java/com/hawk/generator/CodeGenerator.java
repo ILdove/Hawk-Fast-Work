@@ -23,10 +23,10 @@ public class CodeGenerator {
         // 设置父模块名称
         String parentModuleName = "com.hawk";
         // 设置子模块名称
-        String moduleName = "hawk-user";
-        String subPath = "/" + moduleName;
+        String subPath = "/hawk-user";
+        String moduleName = "user";
         // 设置数据库连接
-        String databaseUrl = "jdbc:mysql://100.25.34.28:3316/hawk" + "?useUnicode=true&useSSL=false&characterEncoding=utf8";
+        String databaseUrl = "jdbc:mysql://100.25.34.28:3306/hawk" + "?useUnicode=true&useSSL=false&characterEncoding=utf8";
         // 数据库用户名
         String username = "root";
         // 数据库密码
