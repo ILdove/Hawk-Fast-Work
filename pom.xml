@@ -11,6 +11,7 @@
     <modules>
         <module>hawk-user</module>
         <module>hawk-common</module>
+        <module>hawk-generator</module>
     </modules>
 
     <parent>
