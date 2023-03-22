@@ -3,7 +3,7 @@ package ${package.Entity};
 <#list table.importPackages as pkg>
 import ${pkg};
 </#list>
-<#if swagger2>
+<#if swagger>
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 </#if>
@@ -31,7 +31,7 @@ import lombok.EqualsAndHashCode;
 <#if table.convert>
 @TableName("${table.name}")
 </#if>
-<#if swagger2>
+<#if swagger>
 @ApiModel(description="${table.comment!}")
 </#if>
 <#if superEntityClass??>
@@ -55,7 +55,7 @@ public class ${entity} implements Serializable {
     /**
      * ${field.comment}
      */
-        <#if swagger2>
+        <#if swagger>
     @ApiModelProperty(value = "${field.comment?replace("\r\n","")}")
         </#if>
     </#if>

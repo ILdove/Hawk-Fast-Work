@@ -41,7 +41,7 @@ class ${table.controllerName}<#if superControllerClass??> : ${superControllerCla
 <#if superControllerClass??>
 public class ${table.controllerName} extends ${superControllerClass} {
 <#else>
-    <#if swagger2>
+    <#if swagger>
 @Api(tags = "${table.comment!}接口")
     </#if>
 public class ${table.controllerName}{
